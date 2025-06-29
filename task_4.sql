@@ -1,15 +1,13 @@
--- task_4.sql
--- Script to display books table structure without using DESCRIBE/EXPLAIN
+USE your_database_name;
 
-USE alx_book_store;
 
 SELECT
-    COLUMN_NAME AS 'Field',
-    COLUMN_TYPE AS 'Type',
-    IS_NULLABLE AS 'Null',
+    COLUMN_NAME AS 'Column Name',
+    COLUMN_TYPE AS 'Column Type',
+    IS_NULLABLE AS 'Nullable',
     COLUMN_KEY AS 'Key',
-    COLUMN_DEFAULT AS 'Default',
-    EXTRA AS 'Extra'
+    COLUMN_DEFAULT AS 'Default Value',
+    EXTRA AS 'Extra Information'
 FROM
     INFORMATION_SCHEMA.COLUMNS
 WHERE
