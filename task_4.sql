@@ -1,16 +1,15 @@
 -- task_4.sql
--- Script to show full description of books table without DESCRIBE/EXPLAIN
+-- Script to show table structure without using DESCRIBE/EXPLAIN
 
-USE alx_book_store;
 SELECT
-    COLUMN_NAME AS 'Field',
-    COLUMN_TYPE AS 'Type',
-    IS_NULLABLE AS 'Null',
-    COLUMN_KEY AS 'Key',
-    COLUMN_DEFAULT AS 'Default',
-    EXTRA AS 'Extra'
+    COLUMN_NAME,
+    DATA_TYPE,
+    CHARACTER_MAXIMUM_LENGTH,
+    IS_NULLABLE,
+    COLUMN_KEY,
+    COLUMN_DEFAULT
 FROM
     INFORMATION_SCHEMA.COLUMNS
 WHERE
-    TABLE_SCHEMA = 'alx_book_store'
-    AND TABLE_NAME = 'books';
+    TABLE_NAME = 'books'
+    AND TABLE_SCHEMA = DATABASE();
