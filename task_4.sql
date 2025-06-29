@@ -1,15 +1,15 @@
--- task_4.sql
--- Script to show table structure without using DESCRIBE/EXPLAIN
+USE your_database_name;
+
 
 SELECT
-    COLUMN_NAME,
-    DATA_TYPE,
-    CHARACTER_MAXIMUM_LENGTH,
-    IS_NULLABLE,
-    COLUMN_KEY,
-    COLUMN_DEFAULT
+    COLUMN_NAME AS 'Column Name',
+    COLUMN_TYPE AS 'Column Type',
+    IS_NULLABLE AS 'Nullable',
+    COLUMN_KEY AS 'Key',
+    COLUMN_DEFAULT AS 'Default Value',
+    EXTRA AS 'Extra Information'
 FROM
     INFORMATION_SCHEMA.COLUMNS
 WHERE
-    TABLE_NAME = 'books'
-    AND TABLE_SCHEMA = DATABASE();
+    TABLE_SCHEMA = 'alx_book_store'
+    AND TABLE_NAME ='Books';
